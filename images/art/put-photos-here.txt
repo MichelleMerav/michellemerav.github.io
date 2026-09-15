@@ -1,0 +1,7 @@
+Put art photos in this folder.
+
+Use jpg or png files. Example names:
+  piece-1.jpg
+  piece-2.jpg
+
+Then open art.html and follow the comments in that file.

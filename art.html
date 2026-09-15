@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ART PORTFOLIO
+    Each artwork is one <figure> block. To add a new piece:
+    1. Put a photo in the folder images/art/ (jpg or png).
+    2. Copy one of the figure blocks below.
+    3. Change the file name, title, and caption.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art — Michal Merav</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;1,8..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="letterhead">
+      <p class="site-name"><a href="index.html">Michal Merav</a></p>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Summary</a></li>
+          <li><a href="art.html" class="current">Art</a></li>
+          <li><a href="projects.html">Engineering</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr class="rule-blue">
+    <hr class="rule-orange">
+
+    <main>
+      <h1>Art</h1>
+      <p class="note">
+        Photos go in the folder images/art/. Copy a block below for each new piece.
+        When you have a photo, delete the dashed box and uncomment the &lt;img&gt; line.
+      </p>
+
+      <div class="art-grid">
+
+        <!-- ===== ARTWORK 1 — copy this whole figure to add another ===== -->
+        <figure class="artwork">
+          <!-- Dashed placeholder. Delete this line once you have a photo. -->
+          <div class="empty-frame">Photo goes here<br>images/art/piece-1.jpg</div>
+          <!-- Then remove the &lt;!-- and --&gt; around the next line: -->
+          <!-- <img src="images/art/piece-1.jpg" alt="Title of the piece"> -->
+          <figcaption>
+            <strong>Title of the piece</strong><br>
+            Year — medium
+          </figcaption>
+        </figure>
+
+        <!-- ===== ARTWORK 2 ===== -->
+        <figure class="artwork">
+          <div class="empty-frame">Photo goes here<br>images/art/piece-2.jpg</div>
+          <!-- <img src="images/art/piece-2.jpg" alt="Title of the piece"> -->
+          <figcaption>
+            <strong>Title of the piece</strong><br>
+            Year — medium
+          </figcaption>
+        </figure>
+
+      </div>
+    </main>
+
+    <footer>
+      <a href="https://scholar.google.com/citations?user=FqHgsAQAAAAJ&hl=en">Google Scholar</a>
+      <span class="footer-dot">·</span>
+      <a href="https://www.linkedin.com/in/michalmerav/">LinkedIn</a>
+    </footer>
+
+  </div>
+</body>
+</html>

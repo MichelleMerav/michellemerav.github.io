@@ -1,0 +1,6 @@
+Put project photos in this folder (optional).
+
+Use jpg or png files. Then you can add an image tag in
+a project block in projects.html, like:
+
+  <img src="images/projects/my-project.jpg" alt="Short description">

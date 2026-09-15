@@ -1,0 +1,367 @@
+/* ============================================================
+   MICHAL MERAV — SITE LOOK
+   ------------------------------------------------------------
+   This file is CSS. CSS is the part of a website that controls
+   how things LOOK: colors, fonts, spacing, and layout.
+
+   Every page (index.html, art.html, and so on) points to this
+   one file. If you change a color here, it changes on all pages.
+
+   HOW TO USE THIS FILE:
+   1. Start with the "CHANGE THESE FIRST" section below.
+   2. Save the file.
+   3. Refresh the page in your browser to see the change.
+   ============================================================ */
+
+
+/* ============================================================
+   CHANGE THESE FIRST
+   ------------------------------------------------------------
+   These are nicknames for colors. The rest of this file uses
+   the nicknames (like var(--paper)) so you only edit them here.
+
+   Colors are written as hex codes: a # followed by 6 characters.
+   You can google "hex color picker" to pick new ones.
+   ============================================================ */
+
+:root {
+  --paper: #F4EFE6;   /* page background: off-white / very light tan */
+  --brown: #4A3728;   /* all normal text: dark brown */
+  --blue: #7BA7C9;    /* accent: current menu item, one header line */
+  --orange: #E07A3D;  /* accent: links, the other header line */
+}
+
+
+/* ============================================================
+   PAGE BASICS
+   ------------------------------------------------------------
+   These rules apply to the whole site.
+   ============================================================ */
+
+/* Makes font sizes a little easier to read than the browser default. */
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--brown);
+  /* Roboto Serif is loaded from Google in each HTML file.
+     If it cannot load, the browser tries Georgia, then Times. */
+  font-family: "Roboto Serif", Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+}
+
+/* .page is the inner column. Content stays a readable width
+   and is centered on wide screens. */
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+
+/* ============================================================
+   LINKS
+   ------------------------------------------------------------
+   Orange, with a thin underline. The site name and the menu
+   are styled separately so they do not look like body links.
+   ============================================================ */
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid var(--orange);
+}
+
+a:hover {
+  border-bottom-width: 2px;
+}
+
+
+/* ============================================================
+   LETTERHEAD (the top of every page)
+   ------------------------------------------------------------
+   Name, then the menu, then two thin lines (blue + orange).
+   ============================================================ */
+
+.letterhead {
+  margin-bottom: 0.25rem;
+}
+
+/* The big name. It is a link back to the homepage, but it
+   stays dark brown so it reads as a title, not a button. */
+.site-name {
+  margin: 0;
+  font-size: 2.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.site-name a {
+  color: var(--brown);
+  border-bottom: none;
+}
+
+.site-name a:hover {
+  color: var(--orange);
+  border-bottom: none;
+}
+
+/* The row of page names. */
+.nav-list {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0;
+  font-size: 0.95rem;
+}
+
+.nav-list a {
+  color: var(--brown);
+  border-bottom: none;
+}
+
+.nav-list a:hover {
+  color: var(--orange);
+  border-bottom: none;
+}
+
+/* Put class="current" on the link for the page you are on.
+   That word turns light blue so you can see where you are. */
+.nav-list a.current {
+  color: var(--blue);
+}
+
+/* A small dot between menu items. */
+.nav-list li:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.7rem;
+  color: var(--brown);
+  opacity: 0.4;
+}
+
+/* Two hairlines under the header, like stationery.
+   One is blue, one is orange. They are 3px apart. */
+.rule-blue,
+.rule-orange {
+  border: 0;
+  height: 1px;
+  margin: 0;
+}
+
+.rule-blue {
+  background: var(--blue);
+  margin-top: 1.2rem;
+}
+
+.rule-orange {
+  background: var(--orange);
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   MAIN TEXT
+   ------------------------------------------------------------
+   Headings and paragraphs inside the page content.
+   ============================================================ */
+
+main h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 2rem 0 0.85rem;
+}
+
+main h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+
+main p {
+  margin: 0 0 1rem;
+}
+
+/* Use this class on text that is a reminder to yourself
+   (like "replace this later"). It looks a little quieter. */
+.note {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+
+/* ============================================================
+   ART PAGE — PHOTO GRID
+   ------------------------------------------------------------
+   Two columns on a wide screen, one column on a phone.
+   When you add a real photo, it will fill the width of its cell.
+   ============================================================ */
+
+.art-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 1.35rem;
+  margin-top: 1.25rem;
+}
+
+.artwork {
+  margin: 0;
+}
+
+.artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The gray dashed box you see before you add photos.
+   Delete that box in the HTML once you have a real image. */
+.empty-frame {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed var(--brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.55;
+}
+
+.artwork figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+}
+
+.artwork figcaption strong {
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   PROJECTS PAGE
+   ------------------------------------------------------------
+   Each project is a block of text with a thin line above it.
+   These are NOT cards. They are just stacked entries.
+   ============================================================ */
+
+.project {
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--blue);
+}
+
+.project:last-of-type {
+  border-bottom: 1px solid var(--orange);
+}
+
+.project h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.project .meta {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+/* ============================================================
+   RESUME / CV PAGE
+   ------------------------------------------------------------
+   Looks like a simple printed document: a heading, then a line,
+   then the entries you type in.
+   ============================================================ */
+
+.cv-section h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.6rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--blue);
+}
+
+.cv-item {
+  margin: 0 0 1rem;
+}
+
+.cv-item h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cv-item .meta {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+/* ============================================================
+   PUBLICATIONS PAGE
+   ------------------------------------------------------------
+   A numbered list of papers. Each paper can have a link.
+   ============================================================ */
+
+.paper-list {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.paper-list li {
+  margin: 0 0 1rem;
+}
+
+
+/* ============================================================
+   FOOTER
+   ------------------------------------------------------------
+   Small Scholar and LinkedIn links at the bottom of every page.
+   ============================================================ */
+
+footer {
+  margin-top: 2.75rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--blue);
+  font-size: 0.9rem;
+}
+
+.footer-dot {
+  margin: 0 0.55rem;
+  opacity: 0.4;
+}
+
+
+/* ============================================================
+   PHONE / NARROW WINDOW
+   ------------------------------------------------------------
+   When the window is narrower than 600 pixels, the art grid
+   becomes one column so photos stay large enough to see.
+   ============================================================ */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .site-name {
+    font-size: 1.75rem;
+  }
+
+  .art-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 1.75rem 1.15rem 3rem;
+  }
+}

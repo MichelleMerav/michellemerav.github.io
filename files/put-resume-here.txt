@@ -1,0 +1,5 @@
+Put your resume PDF in this folder and name it:
+
+  resume.pdf
+
+The Download PDF link on resume.html will then work.
